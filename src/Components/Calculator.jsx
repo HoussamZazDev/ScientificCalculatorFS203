@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DisplayWindow from "./DisplayWindow";
 import KeysWindow from "./KeysWindow";
 
-import { evaluate } from "mathjs";
+
 
 
 export default function Calculator() {
@@ -30,7 +30,7 @@ export default function Calculator() {
   function calcResult() {
     if (expression.length !== 0) {
       try {
-        let compute = evaluate(expression);
+        let compute = eval(expression);
         compute = parseFloat(compute.toFixed(4));
         setResult(compute);
 
